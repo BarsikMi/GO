@@ -2,13 +2,24 @@ package main
 
 import "fmt"
 
-func main() {
-	name := ""
-	println("Введите имя")
-	fmt.Scanln(&name)
-	greet(name)
-}
+var a, b, c, d float64
 
-func greet(a string) {
-	fmt.Printf("Привет %s\n", a)
+func main() {
+
+	fmt.Print("Введите значение для a: ")
+	fmt.Scan(&a)
+	fmt.Print("Введите значение для b: ")
+	fmt.Scan(&b)
+	fmt.Print("Введите значение для c: ")
+	fmt.Scan(&c)
+	fmt.Print("Введите значение для d: ")
+	fmt.Scan(&d)
+
+	result := calculateAverage(a, b, c, d)
+	fmt.Printf("Среднее значение: %.2f\n", result)
+
+}
+func calculateAverage(a float64, b float64, c float64, d float64) (sred float64) {
+	sred = (a + b + c + d) / 4
+	return sred
 }
